@@ -14,6 +14,7 @@
     <script>
       const btnFile = document.querySelector('#btnFile');
 
+      // 定义切片上传大小
       const chunkSize = 1024 * 1024;
 
       function upload(index) {
@@ -21,13 +22,17 @@
         const [fname, fext] = file.name.split('.');
         const start = index * chunkSize;
 
+        // 当切块没有内容，递归中止判断
         if (start > file.size) {
           merge(file.name);
           return;
         }
 
+        // 获取切块内容
         const blob = file.slice(start, start + chunkSize);
+        // 切块命名，规则：原文件名.切块索引.文件类型
         const blobName = `${fname}.${index}.${fext}`;
+        // 切块文件转化用于上传
         const blobFile = new File([blob], blobName);
 
         const formData = new FormData();
@@ -35,6 +40,7 @@
 
         axios.post('/upload', formData).then(res => {
           console.log(res);
+          // 递归调用
           upload(++index);
         });
       }
