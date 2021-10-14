@@ -24,6 +24,7 @@
 
         // 当切块没有内容，递归中止判断
         if (start > file.size) {
+          // 上传完成请求合并切片，返回资源地址
           merge(file.name);
           return;
         }
