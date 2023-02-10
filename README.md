@@ -9,3 +9,4 @@
 - [x] 🔨 express-swagger(生成 swagger api 文档)
 - [x] 🔨 fileupload(大文件分片上传)
 - [x] 🔨 video-stream(视频流播放)
+- [x] 🔨 crypto(encryption and decryption)
