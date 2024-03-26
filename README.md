@@ -10,3 +10,7 @@
 - [x] 🔨 fileupload(大文件分片上传)
 - [x] 🔨 video-stream(视频流播放)
 - [x] 🔨 crypto(encryption and decryption)
+
+## 📜 License
+
+[MIT](./LICENSE) License &copy; 2021-PRESENT [wudi](https://github.com/WuChenDi)
